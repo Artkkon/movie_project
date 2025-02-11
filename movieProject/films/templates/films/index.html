@@ -8,6 +8,17 @@
     <div class="col-md-6">
         <h2>Отзывы</h2>
         <!-- Здесь будут отзывы -->
+        {% for film in films %}
+            <div>
+                <h3> {{ film.title }} </h3>
+                <h4> {{ film.discription }} </h4>
+                <p> {{ film.text }} </p>
+                <h4> {{ film.user }} </h4>
+                <h4> {{ film.date }} </h4>
+                <br>
+                <hr>
+            </div>
+        {% endfor %}
     </div>
     <div class="col-md-6">
         <h2>Новости</h2>

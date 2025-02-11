@@ -3,10 +3,33 @@
 {% block title %}Добавить новость{% endblock %}
 
 {% block content %}
-<h1>Добавить новость киноиндустрии</h1>
-<form method="post">
-    {% csrf_token %}
-    {{ form.as_p }}
-    <button type="submit" class="btn btn-primary">Опубликовать</button>
-</form>
+<div class="container mt-5">
+    <h1 class="text-center mb-4">Добавить новость киноиндустрии</h1>
+    <form method="post" class="needs-validation" novalidate>
+        {% csrf_token %}
+        <div class="form-group mb-3">
+            {{ form.title }}
+            <div class="invalid-feedback">
+                Пожалуйста, введите заголовок новости.
+            </div>
+        </div>
+
+        <div class="form-group mb-3">
+            {{ form.discription }}
+            <div class="invalid-feedback">
+                Пожалуйста, введите описание новости.
+            </div>
+        </div>
+
+        <div class="form-group mb-3">
+            {{ form.text }}
+            <div class="invalid-feedback">
+                Пожалуйста, введите текст новости.
+            </div>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Отправить</button>
+    </form>
+    <p>{{error}}</p>
+</div>
 {% endblock %}
